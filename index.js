@@ -8,7 +8,7 @@ try {
   console.log(`App Name ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
-    exec(`echo "Just before gradle build" && ./gradlew build`,(error, stdout, stderr) => {
+    exec(`echo "Just before gradle build" && gradle tasks --all && ./gradlew build`,(error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
             if (error !== null) {
