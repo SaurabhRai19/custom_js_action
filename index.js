@@ -9,7 +9,7 @@ try {
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
   var foo = 'banana'
-    exec(`bash ./somefile.sh ${foo}`,(error, stdout, stderr) => {
+    exec(`gradlew build`,(error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
             if (error !== null) {
