@@ -4,11 +4,10 @@ const {exec} = require('child_process');
 
 try {
   // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
+  const nameToGreet = core.getInput('repo-name');
+  console.log(`App Name ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
-  var foo = 'banana'
     exec(`./gradlew build`,(error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
